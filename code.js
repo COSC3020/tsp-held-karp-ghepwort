@@ -21,15 +21,9 @@ function tsp_hk(distance_matrix) {
 function findShortestPath(matrix, currentCity, visitedCities, memoization = {}) {
     // Create a unique key for memoization based on the current city and visited cities
     // Manually build the visited cities string
-    let visitedString = '';
-    let first = true;
-    for (let city of visitedCities) {
-        if (!first) {
-            visitedString += ',';
-        }
-        visitedString += city;
-        first = false;
-    }
+
+    // I had to convert from a set to an array since a set doesn't have the .join() function weirdly enough
+    visitedString = Array.from(visitedCities).join(",");
 
     // Manually build the key string
     let key = currentCity + '|' + visitedString;
@@ -62,3 +56,10 @@ function findShortestPath(matrix, currentCity, visitedCities, memoization = {}) 
     memoization[key] = minPathLength;
     return minPathLength;
 }
+
+
+dm = [[0, 3, 4, 2, 7],
+[3, 0, 4, 6, 3],
+[4, 4, 0, 5, 8],
+[2, 6, 5, 0, 6],
+[7, 3, 8, 6, 0]];
