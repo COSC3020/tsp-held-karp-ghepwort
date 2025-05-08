@@ -55,6 +55,6 @@ The spce complexity is $\Theta(|V| \cdot 2^{|V|})$. In the findShortestPath func
 
 ## Sources
 
-I had a lot of help from Aidan Newberry and Noah Vohn (I know that isn't his last name but I know it's close to it). They helped me a LOT with both the implementation and the analysis of the algorithm.
+I had a lot of help from Aidan Newberry and Noah Vohn (I know that isn't his last name but I know it's close to it). They helped me a LOT with both the implementation and the analysis of the algorithm. They helped me with how to go about the memoization (tho I did mine differently then theirs). They also helped me with making keys, tho I know how I implemented it probably isn't the best version of keys but from all of my tests so far it seems that while inefficent, it does work.
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
