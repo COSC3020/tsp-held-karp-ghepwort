@@ -46,3 +46,15 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+## Answers
+
+The time complexity is $\Theta(|V|^2 \cdot 2^{|V|})$. In the tsp_hk function we loop through every city as our start city to get us a complexity ofg $|V|$. In the findShortestPath function we compute states defined by the current city and teh set of visited  cities. There are a possible number of $|V|$ current cities and $2^{|V|}$ posible subsets of visited cities resulting in $|V| \cdot 2^{|V|}$ unique states. Putting these two facts together we get a final complexity of $\Theta(|V|^2 \cdot 2^{|V|})$
+
+The spce complexity is $\Theta(|V| \cdot 2^{|V|})$. In the findShortestPath function we compute states defined by the current city and teh set of visited  cities. There are a possible number of $|V|$ current cities and $2^{|V|}$ posible subsets of visited cities resulting in $|V| \cdot 2^{|V|}$ unique states that must be stored. This gives us a memory complexity of $\Theta(|V| \cdot 2^{|V|})$.
+
+## Sources
+
+I had a lot of help from Aidan Newberry and Noah Vohn (I know that isn't his last name but I know it's close to it). They helped me a LOT with both the implementation and the analysis of the algorithm. They helped me with how to go about the memoization (tho I did mine differently then theirs). They also helped me with making keys, tho I know how I implemented it probably isn't the best version of keys but from all of my tests so far it seems that while inefficent, it does work.
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
