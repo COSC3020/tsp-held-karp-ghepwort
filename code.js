@@ -23,7 +23,9 @@ function findShortestPath(matrix, currentCity, visitedCities, memoization = {}) 
     // Manually build the visited cities string
 
     // I had to convert from a set to an array since a set doesn't have the .join() function weirdly enough
-    visitedString = Array.from(visitedCities).join(",");
+    // Sort the nodes first before using them in the key
+    visitedString = Array.from(visitedCities).sort((city1, city2) => city1 - city2).join(",");
+
 
     // Manually build the key string
     let key = currentCity + '|' + visitedString;
@@ -56,10 +58,3 @@ function findShortestPath(matrix, currentCity, visitedCities, memoization = {}) 
     memoization[key] = minPathLength;
     return minPathLength;
 }
-
-
-dm = [[0, 3, 4, 2, 7],
-[3, 0, 4, 6, 3],
-[4, 4, 0, 5, 8],
-[2, 6, 5, 0, 6],
-[7, 3, 8, 6, 0]];
